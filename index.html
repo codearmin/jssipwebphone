@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+ <!-- head -->
+ <head>
+  <meta charset="UTF-8">
+  <title>JsSip WebPhone/title>
+  <script src="https://kit.fontawesome.com/42fd7edece.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="css/phone.css">
+ </head>
+ 
+ <!-- body -->
+ <body style="margin-top: 30px;">
+
+<!-- *************************************************************************************************************** -->
+<!-- navigation -->
+<!-- *************************************************************************************************************** -->
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container">
+  <a class="navbar-brand" href="">WebPhoneCA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="">WebPhone</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">History</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Database</a>
+      </li>
+    </ul> 
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="">Hi, ???</a> -->
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<!-- *************************************************************************************************************** -->
+<!-- main -->
+<!-- *************************************************************************************************************** -->
+<div class="container">
+  <div class="callout">
+    <div class="row">
+      <div class="col-8">
+        
+        <!-- summary phone calls-->
+        <!-- 
+        <table class="table table-bordered ">
+          <thead>
+            <tr>
+              <th scope="col">time</th>
+              <th scope="col">Typ</th>
+              <th scope="col">A</th>
+              <th scope="col">B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01.02.2020 14:54</td>
+              <td>inbound</td>
+              <td>+494567289343</td>
+              <td>+4916593875</td>
+            </tr>
+            <tr>
+              <td>01.02.2020 12:37</td>
+              <td>outbound</td>
+              <td>+49211764823</td>
+              <td>+4971234732</td>
+            </tr>
+            <tr>
+              <td>01.02.2020 10:23</td>
+              <td>outbound</td>
+              <td>+49211764823</td>
+              <td>+4917423343</td>
+            </tr>
+            <tr>
+              <td>01.02.2020 9:34</td>
+              <td>inbound</td>
+              <td>+494567289343</td>
+              <td>+4916593875</td>
+            </tr>
+          
+          </tbody>
+        </table>
+        -->
+        
+      </div>
+      <div class="col-4">
+        <!-- phoneUI-->
+        <div id="callControl">
+          <!-- inactive call control -->
+          <input class="form-control" id="callNumber" type="tel" placeholder="phone number" />
+        </div>
+        <div id="callStatus">
+          <!-- outbound and inbound call status -->
+          <p class="form-control" id="callingNumber" type="tel" placeholder="phone number"></p>
+        </div>
+        <div id="callAnswer">
+          <!-- incomming call -->
+          <p class="form-control" id="incommingNumber" type="tel"></p>
+        </div>
+        <div style="margin-top: 20px"></div>
+        <div class="row">
+          <div class="col-4">
+            <p class="btn btn-light btn-block">1</p> 
+          </div>
+          <div class="col-4">
+            <p class="btn btn-light btn-block">2</p> 
+          </div>
+          <div class="col-4">
+            <p class="btn btn-light btn-block">3</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p class="btn btn-light btn-block">4</p> 
+          </div>
+          <div class="col-4">
+            <p class="btn btn-light btn-block">5</p> 
+          </div>
+          <div class="col-4">
+            <p class="btn btn-light btn-block">6</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p class="btn btn-light btn-block">7</p> 
+          </div>
+          <div class="col-4">
+            <p class="btn btn-light btn-block">8</p> 
+          </div>
+          <div class="col-4">
+            <p class="btn btn-light btn-block">9</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p class="btn btn-light btn-block">*</p> 
+          </div>
+          <div class="col-4">
+            <p class="btn btn-light btn-block">0</p> 
+          </div>
+          <div class="col-4">
+            <p class="btn btn-light btn-block">#</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <!-- empty -->
+          </div>
+          <div class="col-4">
+            <span id="connectCall" class="btn btn-success btn-block"><i class="fas fa-phone"></i></span>
+            <span id="hangUp" class="btn btn-danger btn-block"><i class="fas fa-phone"></i></span>
+            <span id="takeCall" class="btn btn-success btn-block"><i class="fas fa-phone"></i></span>
+          </div>
+          <div class="col-4">
+            
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <div style="padding-bottom: 300px;"></div>
+  
+
+
+
+  <!-- Console Log -->
+  <div class="container">
+    <div class="callout">
+      agent: <span id="user-status"></span><br/>
+      status: <span id="status"></span><br/>
+
+      local_identity: <span id="local_identity"></span><br/>
+      local_identity_uri: <span id="local_identity_uri"></span><br/>
+      remote_identity: <span id="remote_identity"></span><br/>
+      remote_identity_uri: <span id="remote_identity_uri"></span><br/>
+
+
+    </div>
+  </div>
+
+
+  <!-- Telefon -->
+  <div class="container">
+   
+    <div class="callout">
+
+
+
+
+
+      <div id="callAnswer">
+      
+        <div class="text-right">
+         
+          <span id="hangUp" class="btn btn-danger">hangup</span>  
+          <span id="takeCall" class="btn btn-success">takecall</span>  
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  
+<!-- Development Log PP ###### wird im produktiven Betrieb ausgeblendet-->  
+<footer class="bottom">
+  <!-- Console Log -->
+  <div class="container">
+    <div class="callout">
+      ua.on(connected): <span id="connected"></span><br/>
+      ua.on(disconnected): <span id="disconnected"></span><br/>
+      ua.on(registered): <span id="registered"></span><br/>
+      ua.on(newRTCSession): <span id="newRTCSession"></span><br/>
+      session.on(incommingcall): <span id="incommingcall"></span><br/>
+      session.on(ended): <span id="ended"></span><br/>
+      session.on(failed): <span id="failed"></span><br/>
+      session.on(accepted): <span id="accepted"></span><br/>
+      session.on(connecting): <span id="connecting"></span><br/>
+      session.on(peerconnection): <span id="peerconnection"></span><br/>
+      session.on(confirmed): <span id="confirmed"></span><br/>
+      takeCall: <span id="takecall"></span><br/>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- Inaktiver Anruf -->
+  
+  <!-- Config für JsSip und Main.js -->
+  <script src="js/jquery.js"></script> 
+  <script src="https://jssip.net/download/releases/jssip-3.7.1.min.js"></script>
+  <script>
+  var ringTone       = new window.Audio(filename='audio/ringtone.mp3');
+   // Load Dynamically.
+   var asteriskIp = '';
+   var asteriskUser = '';
+   var asteriskUserPass = '';
+   var asteriskUserName = '';
+  </script>
+  <script src="js/phone.js"></script> 
+ </body>
+</html>
